@@ -1,0 +1,11 @@
+<?php
+/** @var $block \Shopstack\PriceManagement\Block\SchedulePrice */
+
+$notificationContent = $block->getNotificationHtml();
+if (!empty($notificationContent)) {
+    ?>
+<div class="message-success success message">
+    <?= /** @noEscape */  $notificationContent ?>
+</div>
+    <?php
+} ?>

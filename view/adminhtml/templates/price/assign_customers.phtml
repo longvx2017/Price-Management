@@ -1,0 +1,20 @@
+<?php
+/** @var $block \Shopstack\PriceManagement\Block\Adminhtml\AssignCustomers */
+$blockGrid = $block->getBlockGrid();
+$gridJsObjectName = $blockGrid->getJsObjectName();
+?>
+<?= $block->getGridHtml() ?>
+<input type="hidden" name="customer_id" id="in_price_customers" data-form-part="price_management_form"
+       value="<?= $escaper->escapeHtml($block->getCustomerJson()); ?>" />
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Shopstack_PriceManagement/js/assign-product-customer": {
+                "updateElement": "in_price_customers",
+                "reloadParam": "customer",
+                "selectedElement": <?= /* @noEscape */ $block->getCustomerJson() ?>,
+                "gridJsObjectName": <?= /* @noEscape */ '"' . $gridJsObjectName . '"' ?: '{}' ?>
+            }
+        }
+    }
+</script>

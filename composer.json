@@ -1,0 +1,25 @@
+{
+    "name": "magento/shopstack-pricemanagement",
+    "description": "Schedule the special price for different customers",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "magento/module-catalog": "104.0.*",
+        "magento/module-customer": "103.0.*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Shopstack\\PriceManagement\\": ""
+        }
+    },
+    "version": "0.0.1"
+}

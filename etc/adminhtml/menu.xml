@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Shopstack_PriceManagement::price_management"
+             title="Price Management"
+             module="Shopstack_PriceManagement"
+             parent="Magento_Catalog::inventory"
+             sortOrder="40"
+             resource="Shopstack_PriceManagement::price_management"
+             action="price_management/index/index"
+             dependsOnConfig="price_management/general/enabled"/>
+    </menu>
+</config>

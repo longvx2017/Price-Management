@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Shopstack\PriceManagement\Api\Data\SchedulePriceSearchResultsInterface"
+                type="Shopstack\PriceManagement\Model\SchedulePriceSearchResults" />
+    <preference for="Shopstack\PriceManagement\Api\Data\SchedulePriceInterface" type="Shopstack\PriceManagement\Model\SchedulePrice" />
+    <preference for="Shopstack\PriceManagement\Api\SchedulePriceRepositoryInterface" type="Shopstack\PriceManagement\Model\SchedulePriceRepository" />
+
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Shopstack\PriceManagement\Api\Data\SchedulePriceInterface" xsi:type="string">Shopstack\PriceManagement\Api\SchedulePriceRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="price_management_listing_data_source" xsi:type="string">Shopstack\PriceManagement\Model\ResourceModel\SchedulePrice\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Shopstack\PriceManagement\Model\ResourceModel\SchedulePrice\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">schedule_price_customer</argument>
+            <argument name="eventPrefix" xsi:type="string">schedule_price_customer_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">schedule_price_c_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Shopstack\PriceManagement\Model\ResourceModel\SchedulePrice</argument>
+        </arguments>
+    </type>
+</config>

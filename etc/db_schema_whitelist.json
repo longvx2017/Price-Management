@@ -1,0 +1,25 @@
+{
+    "schedule_price_customer": {
+        "column": {
+            "schedule_price_customer_id": true,
+            "customer_id": true,
+            "product_id": true,
+            "price": true,
+            "status": true,
+            "start_date": true,
+            "end_date": true,
+            "created_at": true,
+            "updated_at": true,
+            "title": true
+        },
+        "index": {
+            "SCHEDULE_PRICE_CUSTOMER_CUSTOMER_ID": true,
+            "SCHEDULE_PRICE_CUSTOMER_PRODUCT_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SCHEDULE_PRICE_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true,
+            "SCHEDULE_PRICE_CSTR_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true
+        }
+    }
+}
